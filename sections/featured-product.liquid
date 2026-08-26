@@ -19,7 +19,7 @@
 
 <div class="featured-collection--{{ section.settings.color }} {% if section.settings.spacing == 'both' %}section-spacing--both{% elsif section.settings.spacing == 'top' %}section-spacing--top{% else  %}section-spacing--bottom{% endif %}">
   <div class="width">
-    {% render 'product-main-content', product: all_products[section.settings.product], section: section. featured: true %}
+    {% render 'product-main-content', product: all_products[section.settings.product], section: section, featured: true %}
   </div>
 </div>
 
@@ -300,3 +300,15 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-main-content', product: all_products[section.settings.product],
+    section: section. featured: true %}"
+  to: "{% render 'product-main-content', product: all_products[section.settings.product],
+    section: section, featured: true %}"
+  position: 825..943
+{% endcomment %}

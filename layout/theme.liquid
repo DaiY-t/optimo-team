@@ -149,7 +149,7 @@
       <div class="header-overlay"></div>
     </div>
 
-    {{ 'scripts.js' | | asset_url | script_tag }}
+    {{ 'scripts.js' | asset_url | script_tag }}
 
     {{ shop.metafields.loox.global_html_body }}
     <div style="display:none;" id="af_hidepp_btn">
@@ -281,3 +281,13 @@
   {%- render 'layouthub_footer' -%} 
  </body>
 </html>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ 'scripts.js' | | asset_url | script_tag }}"
+  to: "{{ 'scripts.js' | asset_url | script_tag }}"
+  position: 6837..6880
+{% endcomment %}
